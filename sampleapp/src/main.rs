@@ -17,7 +17,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let context = ContextBuilder::new();
 
-    let display = glium::Display::new(window, context, &event_loop)?;
+    let display = glium::backend::glutin::Display::new(window, context, &event_loop)?;
 
     let input = include_bytes!("../../obj-rs/tests/fixtures/normal-cone.obj");
     let obj: Obj = load_obj(&input[..])?;
